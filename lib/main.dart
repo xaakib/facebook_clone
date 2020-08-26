@@ -1,4 +1,5 @@
-import 'package:facebook_clone/homepage.dart';
+import 'package:facebook_clone/config/palette.dart';
+import 'package:facebook_clone/screens/homepage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,7 +11,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Facebook UI',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        scaffoldBackgroundColor: Palette.scaffold,
+      ),
       home: HomePage()
     );
   }

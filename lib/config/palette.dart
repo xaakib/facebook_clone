@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Palette {
   static const Color scaffold = Color(0xFFF0F2F5);
 
-  static const Color facebookBlue = Color(0xF1777F2);
+  static const Color facebookBlue = Color(0xFF1777F2);
 
   static const LinearGradient createRoomGreadient =
       LinearGradient(colors: [Color(0xFF496AE1), Color(0xFFCE48B1)]);
