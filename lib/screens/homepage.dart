@@ -1,8 +1,10 @@
 import 'package:facebook_clone/config/palette.dart';
 import 'package:facebook_clone/data/data.dart';
+import 'package:facebook_clone/models/post_model.dart';
 import 'package:facebook_clone/widgets/circle_button.dart';
 import 'package:facebook_clone/widgets/create_post_container.dart';
 import 'package:facebook_clone/widgets/rooms.dart';
+import 'package:facebook_clone/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -46,6 +48,24 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 5.0),
             sliver: SliverToBoxAdapter(
               child: Rooms(onlineUsers: onlineUsers),
+            ),
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0),
+            sliver: SliverToBoxAdapter(
+              child: Stories(
+                currentUser: currentUser,
+                stories: stories,
+              ),
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                final Post post = posts[index];
+                return PostContainer(post: post);
+              },
+              childCount: posts.length,
             ),
           ),
         ],
